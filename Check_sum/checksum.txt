@@ -1,0 +1,39 @@
+unsigned short checksum(const char* data, int length) {
+  unsigned short sum = 0;
+  for (int i = 0; i < length; i++) {
+    sum += data[i];
+  }
+  return sum;
+}
+-------------------------------------------
+Checksum Calculation Logic:
+
+Initialization:
+-------------------------------------------
+unsigned short sum = 0;: This line initializes a variable named sum of type unsigned short. The unsigned short data type can store values from 0 to 65,535.
+Checksum Accumulation:
+-------------------------------------------
+for (int i = 0; i < length; i++): This for loop iterates through the data block provided as a const char* pointer named data. The loop variable i starts from 0 and continues until it reaches the length of the data block, which is represented by the length parameter.
+sum += data[i];: Within the loop, this line adds the current byte at index i of the data block to the sum variable. The data[i] expression represents the value of the ith byte in the data block.
+Checksum Return:
+-------------------------------------------
+return sum;: This line returns the accumulated sum value, which represents the checksum of the data block.
+-------------------------------------------
+Purpose of Checksum:
+
+A checksum is a simple error detection technique that involves calculating a numerical value based on the contents of a data block. This value is then transmitted along with the data block. At the receiver's end, the same checksum is calculated and compared to the received checksum. If the two checksums match, the data is assumed to be error-free. If they differ, an error has occurred during transmission.
+
+The checksum technique is effective in detecting simple errors such as bit flips or missing bytes. However, it is not foolproof and may not detect more complex error patterns.
+-------------------------------------------
+Example Usage:
+
+C++
+char data[] = "hello world!";
+int length = sizeof(data);
+
+unsigned short checksum_value = checksum(data, length);
+cout << "Checksum value for data: " << checksum_value << endl;
+Use code with caution. Learn more
+This code will output:
+
+Checksum value for data: 1149

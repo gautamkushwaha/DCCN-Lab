@@ -1,1 +1,3 @@
 # DCCN-Lab
+https://aits-tpt.edu.in/wp-content/uploads/2022/06/CN_Lab_manual-min.pdf
+find the useful resource here....

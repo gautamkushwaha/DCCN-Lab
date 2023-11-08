@@ -1,0 +1,22 @@
+
+Error detection techniques are crucial for ensuring data integrity during transmission or storage. Parity checking is a simple yet effective method that utilizes an extra bit, called the parity bit, to detect errors in binary data.
+
+Parity Checking Principles:
+
+Parity checking relies on the concept of even or odd parity. In even parity, the number of 1s in the data and the parity bit is maintained as even. Conversely, in odd parity, the number of 1s is maintained as odd.
+
+Generating Parity Bit:
+
+To generate the parity bit, the number of 1s in the data is counted. If the parity type is even, the parity bit is set to 0 if the count is even and 1 if the count is odd. Similarly, for odd parity, the parity bit is set to 0 if the count is odd and 1 if the count is even.
+
+Error Detection:
+
+At the receiving end, the parity of the received data, including the parity bit, is calculated. If the calculated parity matches the expected parity (even or odd), the data is assumed to be error-free. If the calculated parity differs from the expected parity, it indicates that at least one bit in the data has been corrupted.
+-----------------------------------------------
+This code defines a function checkParity that takes the data and the parity type as parameters. It calculates the number of 1s in the data and determines the expected parity based on the parity type. Then, it compares the calculated parity with the expected parity and returns a boolean value indicating whether the data is error-free or not.
+
+Limitations of Parity Checking:
+
+Parity checking can effectively detect single-bit errors. However, it cannot identify the location of the error or distinguish between multiple bit errors. Additionally, parity checking cannot detect errors in data with an even number of bit flips, as the parity remains unchanged.
+
+Despite these limitations, parity checking remains a simple and efficient method for basic error detection in data transmission and storage. It is widely used in various applications, including computer memory, communication protocols, and data storage devices.
